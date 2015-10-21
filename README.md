@@ -61,6 +61,7 @@ Usage: gitcopier [options]
 ### Working with git merge
 After you `git pull` in external repository, `Gitcopier` will prompt your decision
 where to copy the changed files.
+![Gitcopier prompt](http://puu.sh/kSEKl/bcdf8898e6.gif)
 
 ## Contributing
 
