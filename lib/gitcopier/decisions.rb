@@ -30,7 +30,7 @@ module Gitcopier
     end
 
     def get_data_from_file
-      File.read(decision_file)
+      File.read(decision_file) rescue "{}"
     end
 
     def prompt_decision(changed_file)
