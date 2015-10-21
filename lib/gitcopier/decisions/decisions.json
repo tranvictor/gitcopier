@@ -1,0 +1,62 @@
+{
+  "/": {
+    "decision": "",
+    "source": "/",
+    "des": ""
+  },
+  "/clicklion/": {
+    "decision": "",
+    "source": "/clicklion/",
+    "des": ""
+  },
+  "/clicklion/src/": {
+    "decision": "",
+    "source": "/clicklion/src/",
+    "des": ""
+  },
+  "/clicklion/src/assets/": {
+    "decision": "",
+    "source": "/clicklion/src/assets/",
+    "des": ""
+  },
+  "/clicklion/src/assets/css/": {
+    "decision": "n",
+    "source": "/clicklion/src/assets/css/",
+    "des": ""
+  },
+  "/clicklion/src/assets/data/": {
+    "decision": "n",
+    "source": "/clicklion/src/assets/data/",
+    "des": ""
+  },
+  "/clicklion/src/assets/js/": {
+    "decision": "",
+    "source": "/clicklion/src/assets/js/",
+    "des": ""
+  },
+  "/clicklion/src/assets/js/dashboard/": {
+    "decision": "y",
+    "source": "/clicklion/src/assets/js/dashboard/",
+    "des": "/app/assets/javascripts/dashboards/"
+  },
+  "/clicklion/src/assets/js/libs/": {
+    "decision": "y",
+    "source": "/clicklion/src/assets/js/libs/",
+    "des": "/app/assets/javascripts/libs/"
+  },
+  "/clicklion/src/dashboard/": {
+    "decision": "n",
+    "source": "/clicklion/src/dashboard/",
+    "des": ""
+  },
+  "/clicklion/src/img/": {
+    "decision": "n",
+    "source": "/clicklion/src/img/",
+    "des": ""
+  },
+  "/clicklion/src/pages/": {
+    "decision": "n",
+    "source": "/clicklion/src/pages/",
+    "des": ""
+  }
+}
