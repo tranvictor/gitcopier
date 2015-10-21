@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'gitcopier'
+
+options = {}
+
+begin
+  OptionParser.new do |opts|
+    opts.banner = "Usage: gitcopier [options]"
+    opts.on('--from [path]', 'Absolute path to your local repository that you want to copy from. This option must go with --to.') do |path|
+      options[:command] = "integrate"
+      options[:from] = path
+    end
+    opts.on('--to [path]', 'Absolute path to your local repository that you want to copy to. This option must go with --from.') do |path|
+      options[:command] = "integrate"
+      options[:to] = path
+    end
+    opts.on('-v', '--version') do
+      puts "Gitcopier v#{Gitcopier::VERSION}"; exit(0)
+    end
+    opts.on('--showall', 'Show all integration information. This option ignore any other options.') do
+      options[:command] = "showall"
+    end
+  end.parse!
+rescue OptionParser::InvalidOption
+  puts "Invalid Option. Exit nicely."
+  exit(0)
+end
+
+Gitcopier::CommandLine.execute(options)

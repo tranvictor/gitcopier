@@ -3,8 +3,12 @@ require "gitcopier/version"
 require "gitcopier/decision"
 require "gitcopier/decisions"
 require "gitcopier/dir_tree"
+require "gitcopier/command_line"
 
 module Gitcopier
+
+  INTEGRATION_FILE_NAME = '.gitcopier'
+
   class Integrator
     def initialize(integrate_path, root_path)
       @root_path = root_path
@@ -37,7 +41,7 @@ module Gitcopier
 
     def print_integration_info
       puts "====================================================="
-      puts "          Integrating changes to ClickLion".colorize(:yellow)
+      puts "          Integrating changes to #{@integrate_path}".colorize(:yellow)
       puts "====================================================="
       commit, author, date = commit_log.split("\n")[0..2]
       _, h = commit.split(' ')
