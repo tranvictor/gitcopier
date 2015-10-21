@@ -4,8 +4,6 @@ require 'gitcopier/decision'
 
 module Gitcopier
   class Decisions
-    DECISION_FILE = File.dirname(__FILE__) + '/' + 'decisions/decisions.json'
-
     def initialize(source_root, des_root)
       @source_root = source_root
       @des_root = des_root
@@ -24,7 +22,7 @@ module Gitcopier
     end
 
     def save
-      File.write(DECISION_FILE, JSON.pretty_generate(@decisions))
+      File.write(decision_file, JSON.pretty_generate(@decisions))
     end
 
     def get(changed_file)
@@ -32,7 +30,7 @@ module Gitcopier
     end
 
     def get_data_from_file
-      File.read(DECISION_FILE)
+      File.read(decision_file)
     end
 
     def prompt_decision(changed_file)
@@ -71,6 +69,11 @@ module Gitcopier
         return false
       end
       true
+    end
+
+    private
+    def decision_file
+      File.join(@des_root, '.gitcopier_decisions.json')
     end
   end
 end
