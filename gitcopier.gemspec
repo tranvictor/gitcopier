@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["vu.tran54@gmail.com"]
   spec.summary       = %q{Help developers to integrate between multiple repositories}
   spec.description   = %q{Sometime, you work for a Rails project but its front end is adopted from other repositories (such as separated repository from a front end developer who is not familiar with Rails) and you need to integrate front end changes to the project. You need to see what files were changed, copy them accordingly. This gem will help you do the job really fast.}
-  spec.homepage      = "https://github.com/tranvictor/integrator"
+  spec.homepage      = "https://github.com/tranvictor/gitcopier"
   spec.license       = "MIT"
 
   spec.files         = Dir["{lib,bin}/**/*", "LICENSE.txt", "Rakefile", "README.md"]
