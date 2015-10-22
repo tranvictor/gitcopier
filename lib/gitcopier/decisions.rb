@@ -34,6 +34,8 @@ module Gitcopier
     end
 
     def prompt_decision(changed_file)
+      source_file = @source_root + changed_file
+      source_file << "*" if source_file[-1] == "/"
       while true do
         print "Where do you want to copy #{(@source_root + changed_file).colorize(:green)}? (type h for instruction): "
         user_input = Readline.readline("", true).strip

@@ -30,8 +30,10 @@ module Gitcopier
 
     def copy(source, des)
       # source is a directory, copy its content
+      # TODO: create destination if it doesnt exist
       if source.end_with? '/'
         puts "Copy #{(source + '*').colorize(:green)} to #{des.colorize(:green)}."
+        FileUtils.mkdir_p(des)
         FileUtils.cp_r(Dir["#{source}*"], des)
       else # source is a file, copy it to destination
         puts "Copy #{source.colorize(:green)} to #{des.colorize(:green)}."
@@ -54,6 +56,7 @@ module Gitcopier
     end
 
     def integrate_all_changes
+      STDIN.reopen('/dev/tty')
       print_integration_info
       dir_tree = DirTree.new(@root_path, changed_files)
       dir_tree.travel do |changed_file|
